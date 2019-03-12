@@ -10,51 +10,51 @@ import MenuList from '@material-ui/core/MenuList';
 import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu'
 
-// const styles = theme => ({
-//   root: {
-//     display: 'static',
-//     position: 'relative',
-//   },
-//   paper: {
-//     marginRight: theme.spacing.unit * 2,
-//   },
-// });
+const styles = theme => ({
+  root: {
+    display: 'static',
+    position: 'relative',
+  },
+  paper: {
+    marginRight: theme.spacing.unit * 2,
+  },
+});
 
 class PopupMenu extends React.Component {
-  // state = {
-  //   open: false,
-  // };
+  state = {
+    open: false,
+  };
 
-  // handleToggle = () => {
-  //   this.setState(state => ({ open: !state.open }));
-  // };
+  handleToggle = () => {
+    this.setState(state => ({ open: !state.open }));
+  };
 
-  // handleClose = event => {
-  //   if (this.anchorEl.contains(event.target)) {
-  //     return;
-  //   }
+  handleClose = event => {
+    if (this.anchorEl.contains(event.target)) {
+      return;
+    }
 
-  //   this.setState({ open: false });
-  // };
+    this.setState({ open: false });
+  };
 
   render() {
-    // const { classes } = this.props;
-    // const { open } = this.state;
+    const { classes } = this.props;
+    const { open } = this.state;
 
     return (
-      // <div className={classes.root}>
+      <div className={classes.root}>
         <div>
-          {/* <Button
+          <Button
             buttonRef={node => {
               this.anchorEl = node;
             }}
             aria-owns={open ? 'menu-list-grow' : undefined}
             aria-haspopup="true"
             onClick={this.handleToggle}
-          > */}
+          >
             <MenuIcon />
-          {/* </Button> */}
-          {/* <Popper open={open} anchorEl={this.anchorEl} transition disablePortal>
+          </Button>
+          <Popper open={open} anchorEl={this.anchorEl} transition disablePortal>
             {({ TransitionProps, placement }) => (
               <Grow
                 {...TransitionProps}
@@ -72,16 +72,15 @@ class PopupMenu extends React.Component {
                 </Paper>
               </Grow>
             )}
-          </Popper> */}
+          </Popper>
         </div>
-      // </div>
+      </div>
     );
   }
 }
 
-// PopupMenu.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
+PopupMenu.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
-// export default withStyles(styles)(PopupMenu);
-export default PopupMenu;
+export default withStyles(styles)(PopupMenu);

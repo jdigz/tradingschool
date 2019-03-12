@@ -1,49 +1,57 @@
-import React, { Component } from 'react';
-import {AppBar, Typography, Toolbar, IconButton, SvgIcon, Menu, MenuItem} from '@material-ui/core';
-import {MenuIcon} from '@material-ui/icons/Menu'
-import logo from '../media/logo.png';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Logo from '../components/Logo';
+import Menu from '@material-ui/icons/Menu';
+import { MenuItem } from '@material-ui/core';
 
-class NavBar extends Component {
-  state = {
-    anchorEl: null,
-  };
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 2,
+  },
+  anchorEl: false,
+};
 
-  handleClick = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
+function doSomething() {
+  anchorEl = true;
+}
 
-  handleClose = () => {
-    this.setState({ anchorEl: null });
-  };
-
-  render() {
-    const { anchorEl } = this.state;
-
-    return (
+function ButtonAppBar(props) {
+  const { classes } = props;
+  return (
+    <div className={classes.root}>
       <AppBar color="default" position="sticky">
         <Toolbar>
-          <IconButton>
-            <SvgIcon>
-              <img src={logo} alt="TradeSchool-logo" width="100" height="50"/>
-            </SvgIcon>
-          </IconButton>
-          <Typography varaint="h6" color="inherit">
+          <Logo />
+          <Typography variant="h6" color="inherit" className={classes.grow}>
             TradeSchool
+            <Button onClick={doSomething} className={classes.menuButton} color="inherit" aria-label="Menu">
+            <Menu open={styles.anchorEl}>
+              <MenuItem>Test</MenuItem>
+            </Menu>
+            </Button>
           </Typography>
-          <IconButton color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={this.handleClose}
-          >
-            <MenuItem>Something</MenuItem>
-          </Menu>
+          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-    )
-  }
+    </div>
+  );
 }
-export default NavBar;
+
+ButtonAppBar.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(ButtonAppBar);
