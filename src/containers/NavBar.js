@@ -12,6 +12,7 @@ import Tabs from '@material-ui/core/Tabs';
 import NoSsr from '@material-ui/core/NoSsr';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
+import DropdownMenu from '../components/DropdownMenu';
 
 function TabContainer(props) {
   return (
@@ -76,9 +77,10 @@ class NavBar extends React.Component {
               }}
               value={value}
               onChange={this.handleChange} >
-              <LinkTab label="Academy" href="academy" props={classes.tabRoot} />
-              <LinkTab label="Social" href="social" />
-              <LinkTab label="Support" href="support" />
+              <LinkTab label="Academy" href="academy" props={classes.tabRoot} onMouseOver={this.handleClick}/>
+              <LinkTab label="Social" href="social" onMouseOver={this.handleClick}/>
+              <LinkTab label="Support" href="support" onMouseOver={this.handleClick}/>
+              <DropdownMenu />
             </Tabs>
             <Button
               aria-owns={anchorEl ? 'simple-menu' : undefined}
