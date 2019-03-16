@@ -32,7 +32,7 @@ class HoverMenu extends React.Component {
   };
   /**  Clears mouseOverButton states*/
   handleClose = () => {
-    this.setState({ mouseOverButton: false, mouseOverMenu: false });
+    this.setState({ mouseOverButton: false, mouseOverMenu: false, open: false, });
   };
   enterButton = event => {
     this.setState({ mouseOverButton: true, anchorEl: event.currentTarget });
@@ -63,7 +63,7 @@ class HoverMenu extends React.Component {
     })
 
     /* Calculate open state based on mouse location */
-    const open = this.state.mouseOverButton || this.state.mouseOverMenu;
+    const open = this.state.mouseOverButton || this.state.mouseOverMenu || this.state.open;
 
     const className = classNames(
       classes.root,
