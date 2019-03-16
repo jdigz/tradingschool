@@ -8,7 +8,7 @@ const Logo = () => {
     <div>
       <Button>
         <SvgIcon>
-          <img src={logo} alt="TradeSchool-logo" width="100" height="50"/>
+          <img src={logo} alt="TradeSchool-logo" width="500" height="50"/>
         </SvgIcon>
       </Button>
     </div>
