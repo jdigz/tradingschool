@@ -66,13 +66,13 @@ class NavBar extends React.Component {
                 <TrandingUpIcon nativeColor='green' fontSize='large' />
               </Grid>
               <Hidden xsDown>
-                <Grid item xs={1} justify='center'>
-                  <Typography variant="h6" color="inherit" align='center'>
+                <Grid item xs={2} justify='center'>
+                  {/* <Typography variant="h6" color="inherit" align='center'>
                     TradeSchool
-                  </Typography>
+                  </Typography> */}
                 </Grid>
               </Hidden>
-              <Grid item xs={4} align='right'>
+              <Grid item xs={2} align='right' >
                 <HoverMenu title='Academy'>
                   <MenuItem >Day Trading</MenuItem>
                   <MenuItem >Swing Trading</MenuItem>
@@ -80,14 +80,14 @@ class NavBar extends React.Component {
                   <MenuItem >Indicators</MenuItem>
                 </HoverMenu>
               </Grid>
-              <Grid item xs='auto'>
+              <Grid item xs={2} align='right'>
                   <HoverMenu title='Social'>
                     <MenuItem >Blog</MenuItem>
                     <MenuItem >Chatroom</MenuItem>
                     <MenuItem >Forums</MenuItem>
                   </HoverMenu>
               </Grid>
-              <Grid item xs='auto' align='right'>
+              <Grid item xs={2} align='right'>
                   <HoverMenu title='Support'>
                     <MenuItem >About Us</MenuItem>
                     <MenuItem >Help</MenuItem>
@@ -95,7 +95,7 @@ class NavBar extends React.Component {
                     <MenuItem >Contact Us</MenuItem>
                   </HoverMenu>
               </Grid>
-              <Grid item xs={6} align='right'>
+              <Grid item xs={4} align='right'>
                   <Button
                     aria-owns={anchorEl ? 'simple-menu' : undefined}
                     aria-haspopup="true"
