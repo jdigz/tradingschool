@@ -21,12 +21,15 @@ const styles = theme => ({
   whiteText: {
     color: '#fff',
   },
-  // footer: {
-  //   position:'absolute',
-  //   bottom: 0,
-  //   width: '100%',
-  //   height: '4.1rem',
-  // },
+  about: {
+    width: '80%',
+    marginLeft: '10%', //(100%-80%)/2 = 10%
+    padding: '10rem 0',
+    textAlign: 'center',
+  },
+  ml4: {
+    marginLeft: '4%',
+  }
 })
 
 class App extends Component {
@@ -47,10 +50,10 @@ class App extends Component {
             <Grid item xs={12}><NavBar/></Grid>
             <Grid item xs={12} className={ classes.heroContainer} align='center'><h1 className={classes.whiteText}>Hero Section</h1></Grid>
           </Grid>
-          <Grid container item justify='center'>
-            <Grid item xs={12} sm={4} align='center'>About/Quotes1</Grid>
-            <Grid item xs={12} sm={4} align='center'>About/Quotes2</Grid>
-            <Grid item xs={12} sm={4} align='center'>About/Quotes3</Grid>
+          <Grid container item justify='center' className={classes.about}>
+              <Grid item xs={12} sm={4} align='center'>"What feels good is often the wrong thing to do" - William Eckhardt</Grid>
+              <Grid className={classes.ml4} item xs={12} sm={4} align='center'>"I don't trade for excitement; I trade to win" - Larry Hite</Grid>
+              <Grid className={classes.ml4} item xs={12} sm={4} align='center'>"The trick is to differentiate between what you WANT to happen and what you KNOW will happen" - Zen and the Art of Trading</Grid>
           </Grid>
           <Grid item xs={12} align='center' className={classes.footer}><Footer/></Grid>
         </Grid>
