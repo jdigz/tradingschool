@@ -35,10 +35,10 @@ function Footer(props) {
           </ul>
           <div className='font-mono text-xs'>Webpage Created by Joseph "JDiGz" DiGregorio</div>
           <div className='font-mono text-xs'>Icons made by
-            <a href="https://www.freepik.com/" title="Freepik"> Freepik</a>from
+            <a href="https://www.freepik.com/" title="Freepik"> Freepik </a>and 
+            <a href="https://www.flaticon.com/authors/gregor-cresnar"> Gregor Cresnar </a>from
             <a href="https://www.flaticon.com/" title="Flaticon"> Flaticon.com</a> licensed by
             <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank"> CC 3.0 BY</a>
-            
           </div>
         </div>
       </div>
