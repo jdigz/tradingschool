@@ -1,18 +1,18 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+// React
+import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
+
+// Styles
 import withStyles from '@material-ui/core/styles/withStyles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+
+// Components
+import HoverMenu from '../components/HoverMenu/';
+
+// Material-UI
+import { AppBar, Grid, Hidden, MenuItem, Toolbar, Typography, Divider, } from '@material-ui/core';
+
 import MenuIcon from '@material-ui/icons/Menu';
-import NoSsr from '@material-ui/core/NoSsr';
-import Typography from '@material-ui/core/Typography';
-import HoverMenu from '../components/HoverMenu';
-import Grid from '@material-ui/core/Grid';
-import Hidden from '@material-ui/core/Hidden';
-import TrandingUpIcon from '@material-ui/icons/TrendingUp';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp/';
 
 function TabContainer(props) {
   return (
@@ -30,95 +30,105 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
   },
-  firstButton: {
-    marginLeft: 100,
-    marginRight: 100,
+  menuContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  iconContainer: {
+    display: 'flex',
+    justifyContent: 'left',
+  },
+  m75: {
+    paddingLeft: 75,
+    paddingRight: 75,
+  },
+  m25r: {
+    paddingRight: 25,
   },
   push: {
-    alignSelf: 'flex-end',
-  }
+    display: 'flex',
+    justifyContent: 'right',
+  },
 });
 
-class NavBar extends React.Component {
-  state = {
-    anchorEl: null,
-  };
-
-  showMenu = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
-
-  hideMenu = () => {
-    this.setState({ anchorEl: null });
-  };
-
+class NavBar extends Component {
   render() {
     const { classes } = this.props;
-    const { anchorEl } = this.state;
 
     return (
-      <NoSsr>
       <div>
-        <AppBar title="TradeSchool" color="default" position="sticky">
+        <AppBar title="TradeSchool" color="Default" position="sticky" className={classes.root}>
           <Toolbar>
-            <Grid container classes={classes.root} direction='row' wrap='nowrap'>
-              <Grid item xs={0}>
-                <TrandingUpIcon nativeColor='green' fontSize='large' />
+            <Grid container direction='row' wrap='nowrap'>
+              <Grid item xs={3}>
+                <ul className={classes.iconContainer}>  
+                  <TrendingUpIcon className={classes.m25r} fontSize='large'/>
+                  <Hidden smDown>
+                    <Typography variant="h6" align='left'>TradeSchool</Typography>
+                  </Hidden>
+                </ul>
               </Grid>
               <Hidden xsDown>
-                <Grid item xs={2} justify='center'>
-                  {/* <Typography variant="h6" color="inherit" align='center'>
-                    TradeSchool
-                  </Typography> */}
+                <Grid item xs={6}>
+                  <ul className={classes.menuContainer}>
+                    <li className={classes.m75}>
+                      <HoverMenu title='Academy'>
+                        <MenuItem >Day Trading</MenuItem>
+                        <MenuItem >Swing Trading</MenuItem>
+                        <MenuItem >Candlestick Patterns</MenuItem>
+                        <MenuItem >Indicators</MenuItem>
+                      </HoverMenu>
+                    </li>
+                    <li>
+                      <HoverMenu title='Social'>
+                        <MenuItem >Blog</MenuItem>
+                        <MenuItem >Chatroom</MenuItem>
+                        <MenuItem >Forums</MenuItem>
+                      </HoverMenu>
+                    </li>
+                    <li className={classes.m75}>
+                      <HoverMenu title='Support'>
+                        <MenuItem >About Us</MenuItem>
+                        <MenuItem >Help</MenuItem>
+                        <MenuItem >FAQ</MenuItem>
+                        <MenuItem >Contact Us</MenuItem>
+                      </HoverMenu>
+                    </li>
+                  </ul>
                 </Grid>
               </Hidden>
-              <Grid item xs={2} align='right' >
-                <HoverMenu title='Academy'>
-                  <MenuItem >Day Trading</MenuItem>
-                  <MenuItem >Swing Trading</MenuItem>
-                  <MenuItem >Candlestick Patterns</MenuItem>
-                  <MenuItem >Indicators</MenuItem>
+              <Hidden smUp>
+                <Grid item xs={6} >
+                  <div className={classes.menuContainer}>
+                  <HoverMenu title='Menu'>
+                      <MenuItem >Day Trading</MenuItem>
+                      <MenuItem >Swing Trading</MenuItem>
+                      <MenuItem >Candlestick Patterns</MenuItem>
+                      <MenuItem >Indicators</MenuItem>
+                    <Divider />
+                      <MenuItem >Blog</MenuItem>
+                      <MenuItem >Chatroom</MenuItem>
+                      <MenuItem >Forums</MenuItem>
+                    <Divider />
+                      <MenuItem >About Us</MenuItem>
+                      <MenuItem >Help</MenuItem>
+                      <MenuItem >FAQ</MenuItem>
+                      <MenuItem >Contact Us</MenuItem>
+                  </HoverMenu>
+                  </div>
+                </Grid>
+              </Hidden>
+              <Grid item xs={3} className={classes.push}>
+                <HoverMenu title={<MenuIcon/>}>
+                  <MenuItem>Account</MenuItem>
+                  <MenuItem>Swing Trading</MenuItem>
+                  <MenuItem>Logout</MenuItem>
                 </HoverMenu>
               </Grid>
-              <Grid item xs={2} align='right'>
-                  <HoverMenu title='Social'>
-                    <MenuItem >Blog</MenuItem>
-                    <MenuItem >Chatroom</MenuItem>
-                    <MenuItem >Forums</MenuItem>
-                  </HoverMenu>
-              </Grid>
-              <Grid item xs={2} align='right'>
-                  <HoverMenu title='Support'>
-                    <MenuItem >About Us</MenuItem>
-                    <MenuItem >Help</MenuItem>
-                    <MenuItem >FAQ</MenuItem>
-                    <MenuItem >Contact Us</MenuItem>
-                  </HoverMenu>
-              </Grid>
-              <Grid item xs={4} align='right'>
-                  <Button
-                    aria-owns={anchorEl ? 'simple-menu' : undefined}
-                    aria-haspopup="true"
-                    onClick={this.showMenu}
-                  >
-                    <MenuIcon/>
-                  </Button>
-              </Grid>
             </Grid>
-            <Menu
-              id="simple-menu"
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={this.hideMenu}
-            >
-              <MenuItem onClick={this.hideMenu}>Account</MenuItem>
-              <MenuItem onClick={this.hideMenu}>Swing Trading</MenuItem>
-              <MenuItem onClick={this.hideMenu}>Logout</MenuItem>
-            </Menu>
           </Toolbar>
         </AppBar>
       </div>
-      </NoSsr>
     );
   }
 }

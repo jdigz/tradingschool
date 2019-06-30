@@ -1,3 +1,7 @@
+body {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
 .quote-section{
   padding: 20rem 0 19rem;
   text-align: center;
@@ -7,6 +11,10 @@
   font-size: 55px;
   font-weight: 400;
   letter-spacing: -1px;
+}
+
+.hookline-container {
+  margin: 100px;
 }
 
 .gray-font {
