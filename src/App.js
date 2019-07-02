@@ -11,28 +11,31 @@ import { withStyles } from '@material-ui/styles';
 import NavBar from './NavBar';
 
 // Footer
-import Footer from '../components/Footer';
+import Footer from './components/Footer';
 
 //Content
-import Background from '../media/pexels-photo-241544.jpeg'
-import EarnIcon from '../components/Icons/EarnIcon'
-import ImproveIcon from '../components/Icons/ImproveIcon'
-import LearnIcon from '../components/Icons/LearnIcon'
+import Background from './media/pexels-photo-241544.jpeg'
+import EarnIcon from './components/Icons/EarnIcon/EarnIcon'
+import ImproveIcon from './components/Icons/ImproveIcon/ImproveIcon'
+import LearnIcon from './components/Icons/LearnIcon/LearnIcon'
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
   },
   heroContainer: {
-    padding: '150px 0 150px 0',
+    minHeight: '100vh',
     backgroundImage: `url(${Background})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
   },
-  title: {
-    color: '#feffff',
-    fontSize: '50px',
+  title : {
+    padding: '40vh',
+    fontWeight: 'bold',
+    letterSpacing: '0.02em',
+    color: '#fff',
   },
   about: {
     width: '80%',
@@ -61,7 +64,9 @@ class App extends Component {
         <Grid container>
           <Grid container item>
             <Grid item xs={12}><NavBar/></Grid>
-            <Grid item xs={12} className={ classes.heroContainer} align='center'><h1 className={classes.title}>TradingSchool</h1></Grid>
+            <Grid item xs={12} className={ classes.heroContainer} align='center'>
+              <Typography className={classes.title} variant='h1'>TradingSchool</Typography>
+            </Grid>
           </Grid>
           <Grid container justify='center' className='gray-font hookline-container'>
             <Grid item xs={12} align='center'><div ><h1 className='hookline gray-font'>Start Learning Today</h1></div></Grid>

@@ -6,29 +6,18 @@ import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 // Components
-import HoverMenu from '../components/HoverMenu/';
+import HoverMenu from './components/HoverMenu';
 
 // Material-UI
 import { AppBar, Grid, Hidden, MenuItem, Toolbar, Typography, Divider, } from '@material-ui/core';
-
 import MenuIcon from '@material-ui/icons/Menu';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp/';
-
-function TabContainer(props) {
-  return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
-    </Typography>
-  );
-}
-
-TabContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
+    minHeight: '64px',
+    marginBottom: '10px',
   },
   menuContainer: {
     display: 'flex',
@@ -57,9 +46,9 @@ class NavBar extends Component {
 
     return (
       <div>
-        <AppBar title="TradeSchool" color="Default" position="sticky" className={classes.root}>
+        <AppBar title="TradeSchool" color="primary" position="fixed">
           <Toolbar>
-            <Grid container direction='row' wrap='nowrap'>
+            <Grid container className={classes.root} direction='row' wrap='nowrap' alignItems='flex-end'>
               <Grid item xs={3}>
                 <ul className={classes.iconContainer}>  
                   <TrendingUpIcon className={classes.m25r} fontSize='large'/>

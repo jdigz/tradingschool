@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import './index.css';
 
 // App
-import App from './containers/App';
+import App from './App';
 
 // Theme
 import muiTheme from './theme/muiTheme';

@@ -8,10 +8,13 @@ import './Footer.css';
 import FacebookIcon from '../Icons/FacebookIcon/FacebookIcon';
 import LinkedInIcon from '../Icons/LinkedInIcon/LinkedInIcon';
 import GitHubIcon from '../Icons/GitHubIcon/GitHubIcon';
+import { Box } from '@material-ui/core';
+
+// Material UI
 
 function Footer(props) {
   return (
-    <div className='bg-black'>
+    <Box bgcolor='primary.main'>
       <div className="container gutter space-t space-b">
         <nav className='menu-bar'>
           <ul>
@@ -22,7 +25,7 @@ function Footer(props) {
           </ul>
         </nav>
       </div>
-      <div className="bg-black space-t space-b">
+      <Box bgcolor='primary.main' className="space-t space-b">
         <div className='container gutter dark-green '>
           <ul className='mb-sm'>
             <li className='contact-link'><a href='https://github.com/jdigz'><GitHubIcon width={32}/></a></li>
@@ -37,8 +40,8 @@ function Footer(props) {
             <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"> CC 3.0 BY</a>
           </div>
         </div>
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 

@@ -6,6 +6,7 @@ import './HoverMenu.css';
 
 // Material UI
 import Button from "@material-ui/core/Button";
+import { Box } from '@material-ui/core';
 
 function HoverMenu(props) {
 
@@ -15,12 +16,12 @@ function HoverMenu(props) {
   })
   
   return (
-    <div className={"dropdown" }>
-      <Button className="dropbtn">{props.title}</Button>
-      <div className="dropdown-content">
+    <Box className={"dropdown"}>
+      <Button color='inherit' className="dropbtn">{props.title}</Button>
+      <Box bgcolor='primary.main' className="dropdown-content">
         {modifiedChildren}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }
 
