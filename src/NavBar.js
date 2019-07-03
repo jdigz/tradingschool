@@ -78,7 +78,6 @@ class NavBar extends Component {
                     <li className={classes.m75}>
                       <HoverMenu title='Support'>
                         <MenuItem >About Us</MenuItem>
-                        <MenuItem >Help</MenuItem>
                         <MenuItem >FAQ</MenuItem>
                         <MenuItem >Contact Us</MenuItem>
                       </HoverMenu>
@@ -100,7 +99,6 @@ class NavBar extends Component {
                       <MenuItem >Forums</MenuItem>
                     <Divider />
                       <MenuItem >About Us</MenuItem>
-                      <MenuItem >Help</MenuItem>
                       <MenuItem >FAQ</MenuItem>
                       <MenuItem >Contact Us</MenuItem>
                   </HoverMenu>
@@ -110,7 +108,6 @@ class NavBar extends Component {
               <Grid item xs={3} className={classes.push}>
                 <HoverMenu title={<MenuIcon/>}>
                   <MenuItem>Account</MenuItem>
-                  <MenuItem>Swing Trading</MenuItem>
                   <MenuItem>Logout</MenuItem>
                 </HoverMenu>
               </Grid>
