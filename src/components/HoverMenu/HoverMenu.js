@@ -16,7 +16,7 @@ function HoverMenu(props) {
   })
   
   return (
-    <Box className={"dropdown"}>
+    <Box className={`dropdown ${props.className}`}>
       <Button color='inherit' className="dropbtn">{props.title}</Button>
       <Box bgcolor='primary.main' className="dropdown-content">
         {modifiedChildren}
