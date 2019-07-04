@@ -1,12 +1,8 @@
-// React
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// Style
 import './Home.css';
 import 'typeface-roboto';
 import { withStyles } from '@material-ui/styles';
-//Content
 import Background from '../../media/pexels-photo-241544.jpeg'
 import EarnIcon from '../Icons/EarnIcon'
 import ImproveIcon from '../Icons/ImproveIcon'

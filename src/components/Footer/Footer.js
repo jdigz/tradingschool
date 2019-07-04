@@ -1,16 +1,9 @@
-// React
 import React from 'react';
-
-// Style
 import './Footer.css';
-
-// Icons
 import FacebookIcon from '../Icons/FacebookIcon/FacebookIcon';
 import LinkedInIcon from '../Icons/LinkedInIcon/LinkedInIcon';
 import GitHubIcon from '../Icons/GitHubIcon/GitHubIcon';
 import { Box } from '@material-ui/core';
-
-// Material UI
 
 function Footer(props) {
   return (

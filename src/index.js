@@ -1,20 +1,11 @@
-// React
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-
-// Redux
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers';
-
-// CSS
 import './index.css';
-
-// App
 import App from './components/App';
-
-// Theme
 import muiTheme from './theme/muiTheme';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 

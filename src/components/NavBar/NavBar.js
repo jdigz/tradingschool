@@ -1,14 +1,8 @@
-// React
 import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-// Styles
 import withStyles from '@material-ui/core/styles/withStyles';
-
-// Components
 import HoverMenu from '../HoverMenu';
-
-// Material-UI
 import { AppBar, Grid, Hidden, MenuItem, Toolbar, Typography, Divider, } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp/';
