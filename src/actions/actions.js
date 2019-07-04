@@ -1,33 +1,31 @@
+//NO ACTIONS YET
+
 /* Step 1: Define Action Types
 * action types
 */
 
-export const ADD_TODO = 'ADD_TODO'
-export const TOGGLE_TODO = 'TOGGLE_TODO'
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+// export const GOTO_PAGE = 'GOTO_PAGE'
 
 /* Step 2: Define other constants needed
 *  other constants
 */
 
-export const VISIBILITY_FILTERS = {
-  SHOW_ALL = 'SHOW_ALL',
-  SHOW_COMPLETED = 'SHOW_COMPLETED',
-  SHOW_ACTIVE = 'SHOW_ACTIVE',
-}
+// export const PAGES = {
+//   HOME: 'HOME',
+//   DAY_TRADING: 'DAY_TRADING',
+//   SWING_TRADING: 'SWING_TRADING',
+//   CANDLESTICK_PATTERNS: 'CANDLESTICK_PATTERNS',
+//   INDICATORS: 'INDICATORS',
+//   BLOG: 'BLOG',
+//   CHATROOM: 'CHATROOM',
+//   FORUM: 'FORUM',
+//   SUPPORT: 'SUPPORT',
+// }
 
 /* Step 3: Create action creators which return actions.
 * action creators
 */
 
-export const addTodo = (text) => {
-  return { type: ADD_TODO, text }
-}
-
-export const toggleTodo = (index) => {
-  return { type: TOGGLE_TODO, index }
-}
-
-export const setVisibilityFilter = (filter) => {
-  return { type: SET_VISIBILITY_FILTER, filter }
-}
+// export const goToPage = (index) => {
+//   return { type: GOTO_PAGE, index }
+// }
