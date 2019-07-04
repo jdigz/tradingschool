@@ -6,7 +6,7 @@ import {
   TOGGLE_TODO,
   SET_VISIBILITY_FILTER,
   VISIBILITY_FILTERS,
-} from '../actions';
+} from '../actions/actions';
 
 import { combineReducers } from 'redux';
 

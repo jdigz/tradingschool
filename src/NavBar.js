@@ -60,28 +60,22 @@ class NavBar extends Component {
               <Hidden xsDown>
                 <Grid item xs={6}>
                   <ul className={classes.menuContainer}>
-                    <li className={classes.m75}>
-                      <HoverMenu title='Academy'>
+                      <HoverMenu className={classes.m75} title='Academy'>
                         <MenuItem >Day Trading</MenuItem>
                         <MenuItem >Swing Trading</MenuItem>
                         <MenuItem >Candlestick Patterns</MenuItem>
                         <MenuItem >Indicators</MenuItem>
                       </HoverMenu>
-                    </li>
-                    <li>
-                      <HoverMenu title='Social'>
+                      <HoverMenu className={classes.m75} title='Social'>
                         <MenuItem >Blog</MenuItem>
                         <MenuItem >Chatroom</MenuItem>
                         <MenuItem >Forums</MenuItem>
                       </HoverMenu>
-                    </li>
-                    <li className={classes.m75}>
-                      <HoverMenu title='Support'>
+                      <HoverMenu className={classes.m75} title='Support'>
                         <MenuItem >About Us</MenuItem>
                         <MenuItem >FAQ</MenuItem>
                         <MenuItem >Contact Us</MenuItem>
                       </HoverMenu>
-                    </li>
                   </ul>
                 </Grid>
               </Hidden>
