@@ -1,12 +1,12 @@
 // React
 import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
-
+import { NavLink } from 'react-router-dom';
 // Styles
 import withStyles from '@material-ui/core/styles/withStyles';
 
 // Components
-import HoverMenu from './components/HoverMenu';
+import HoverMenu from '../HoverMenu';
 
 // Material-UI
 import { AppBar, Grid, Hidden, MenuItem, Toolbar, Typography, Divider, } from '@material-ui/core';
@@ -61,20 +61,20 @@ class NavBar extends Component {
                 <Grid item xs={6}>
                   <ul className={classes.menuContainer}>
                       <HoverMenu className={classes.m75} title='Academy'>
-                        <MenuItem >Day Trading</MenuItem>
-                        <MenuItem >Swing Trading</MenuItem>
-                        <MenuItem >Candlestick Patterns</MenuItem>
-                        <MenuItem >Indicators</MenuItem>
+                        <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Day Trading</NavLink></MenuItem>
+                        <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Swing Trading</NavLink></MenuItem>
+                        <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Candlestick Patterns</NavLink></MenuItem>
+                        <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Indicators</NavLink></MenuItem>
                       </HoverMenu>
                       <HoverMenu className={classes.m75} title='Social'>
-                        <MenuItem >Blog</MenuItem>
-                        <MenuItem >Chatroom</MenuItem>
-                        <MenuItem >Forums</MenuItem>
+                        <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Blog</NavLink></MenuItem>
+                        <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Chatroom</NavLink></MenuItem>
+                        <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Forums</NavLink></MenuItem>
                       </HoverMenu>
                       <HoverMenu className={classes.m75} title='Support'>
-                        <MenuItem >About Us</MenuItem>
-                        <MenuItem >FAQ</MenuItem>
-                        <MenuItem >Contact Us</MenuItem>
+                        <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>About Us</NavLink></MenuItem>
+                        <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>FAQ</NavLink></MenuItem>
+                        <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Contact Us</NavLink></MenuItem>
                       </HoverMenu>
                   </ul>
                 </Grid>
@@ -83,26 +83,26 @@ class NavBar extends Component {
                 <Grid item xs={6} >
                   <div className={classes.menuContainer}>
                   <HoverMenu title='Menu'>
-                      <MenuItem >Day Trading</MenuItem>
-                      <MenuItem >Swing Trading</MenuItem>
-                      <MenuItem >Candlestick Patterns</MenuItem>
-                      <MenuItem >Indicators</MenuItem>
+                      <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Day Trading</NavLink></MenuItem>
+                      <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Swing Trading</NavLink></MenuItem>
+                      <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Candlestick Patterns</NavLink></MenuItem>
+                      <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Indicators</NavLink></MenuItem>
                     <Divider />
-                      <MenuItem >Blog</MenuItem>
-                      <MenuItem >Chatroom</MenuItem>
-                      <MenuItem >Forums</MenuItem>
+                      <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Blog</NavLink></MenuItem>
+                      <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Chatroom</NavLink></MenuItem>
+                      <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Forums</NavLink></MenuItem>
                     <Divider />
-                      <MenuItem >About Us</MenuItem>
-                      <MenuItem >FAQ</MenuItem>
-                      <MenuItem >Contact Us</MenuItem>
+                      <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>About Us</NavLink></MenuItem>
+                      <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>FAQ</NavLink></MenuItem>
+                      <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Contact Us</NavLink></MenuItem>
                   </HoverMenu>
                   </div>
                 </Grid>
               </Hidden>
               <Grid item xs={3} className={classes.push}>
                 <HoverMenu title={<MenuIcon/>}>
-                  <MenuItem>Account</MenuItem>
-                  <MenuItem>Logout</MenuItem>
+                  <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Account</NavLink></MenuItem>
+                  <MenuItem><NavLink to={`${process.env.PUBLIC_URL}/`}>Logout</NavLink></MenuItem>
                 </HoverMenu>
               </Grid>
             </Grid>
