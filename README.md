@@ -1,3 +1,5 @@
+This is a concept webpage that is currently IN PROGRESS. I hope to complete this website and have it hosted by the end of 2019.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
